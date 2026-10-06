@@ -1,0 +1,328 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>ทริปเวียดนาม 2–8 พ.ย.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Prompt:wght@500;600&display=swap">
+<style>
+/* Layout: one narrow reading column; each day is a header plus a time-ruled timeline. Teal for the coast, rust for cautions. */
+:root {
+  --bg: #f2f5f2;
+  --surface: #ffffff;
+  --fg: #1b2a2b;
+  --muted: #5b6e6f;
+  --line: #d3dcd8;
+  --accent: #0e6b6e;
+  --accent-soft: #dcecea;
+  --warn: #a8481f;
+  --warn-soft: #f6e6dc;
+  --font-display: "Prompt", "IBM Plex Sans Thai", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans Thai", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1a1b; --surface: #162425; --fg: #e3ece9; --muted: #92a8a6; --line: #274042;
+    --accent: #5cc4c4; --accent-soft: #17393a; --warn: #e79468; --warn-soft: #3a2519;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f1a1b; --surface: #162425; --fg: #e3ece9; --muted: #92a8a6; --line: #274042;
+  --accent: #5cc4c4; --accent-soft: #17393a; --warn: #e79468; --warn-soft: #3a2519;
+  color-scheme: dark;
+}
+body {
+  background: var(--bg); color: var(--fg);
+  font-family: var(--font-body); font-size: 16px; line-height: 1.65;
+}
+.wrap { max-width: 46rem; margin-inline: auto; padding-inline: 16px; padding-block: 28px 64px; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.25; text-wrap: balance; margin: 0; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.3rem; }
+h3 { font-size: 1.05rem; }
+a { color: var(--accent); }
+a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+p { margin: 0; }
+
+.eyebrow { font-family: var(--font-mono); font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+header { display: flex; flex-direction: column; gap: 10px; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
+.lede { color: var(--muted); max-width: 40rem; }
+
+.route { display: flex; flex-wrap: wrap; gap: 6px 4px; align-items: center; font-family: var(--font-mono); font-size: .8rem; margin-top: 6px; }
+.route span.stop { background: var(--accent-soft); color: var(--accent); padding: 2px 8px; border-radius: 4px; }
+.route span.arrow { color: var(--muted); }
+
+nav { display: flex; flex-wrap: wrap; gap: 8px; padding-block: 16px; }
+nav a { font-family: var(--font-mono); font-size: .8rem; text-decoration: none; border: 1px solid var(--line); border-radius: 4px; padding: 3px 10px; color: var(--fg); background: var(--surface); }
+nav a:hover { border-color: var(--accent); color: var(--accent); }
+
+.check { background: var(--warn-soft); border-radius: 6px; padding: 16px; display: flex; flex-direction: column; gap: 10px; }
+.check h2 { color: var(--warn); font-size: 1.1rem; }
+.check ul { margin: 0; padding-left: 1.2em; display: flex; flex-direction: column; gap: 6px; }
+
+section.day { margin-top: 40px; scroll-margin-top: 16px; }
+.day-head { display: flex; flex-direction: column; gap: 4px; padding-bottom: 10px; border-bottom: 2px solid var(--accent); margin-bottom: 4px; }
+.day-head .where { color: var(--muted); }
+
+.tl { display: flex; flex-direction: column; }
+.row { display: grid; grid-template-columns: 6.6rem minmax(0, 1fr); gap: 14px; padding-block: 12px; border-bottom: 1px solid var(--line); }
+.row:last-child { border-bottom: 0; }
+.time { font-family: var(--font-mono); font-size: .85rem; color: var(--accent); padding-top: 2px; font-variant-numeric: tabular-nums; }
+.row .body { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.row .body strong { font-weight: 600; }
+.row .body .sub { color: var(--muted); font-size: .93rem; }
+.row .body ul { margin: 4px 0 0; padding-left: 1.2em; display: flex; flex-direction: column; gap: 4px; color: var(--muted); font-size: .93rem; }
+@media (max-width: 440px) { .row { grid-template-columns: 5rem minmax(0, 1fr); gap: 10px; } .time { font-size: .78rem; } }
+
+.note { margin-top: 10px; padding: 12px 14px; background: var(--accent-soft); border-radius: 6px; font-size: .93rem; }
+.note.warn { background: var(--warn-soft); }
+.note b { font-weight: 600; }
+
+h2.sec { margin-top: 48px; margin-bottom: 12px; }
+.scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; min-width: 34rem; font-size: .92rem; }
+th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-family: var(--font-mono); font-size: .75rem; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
+tr:last-child td { border-bottom: 0; }
+td.n { font-family: var(--font-mono); font-size: .85rem; white-space: nowrap; }
+
+.cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 16px; }
+.cols > div { min-width: 0; }
+.cols ul { margin: 6px 0 0; padding-left: 1.2em; display: flex; flex-direction: column; gap: 4px; }
+.src { font-size: .88rem; color: var(--muted); }
+.src ul { padding-left: 1.2em; margin: 6px 0 0; display: flex; flex-direction: column; gap: 2px; overflow-wrap: anywhere; }
+</style>
+
+<div class="wrap">
+  <header>
+    <span class="eyebrow">Vietnam · 2–8 Nov 2026</span>
+    <h1>ทริปเวียดนาม 7 วัน: ลางโก บ่าหน่าฮิลส์ ซาปา</h1>
+    <p class="lede">เวลาทุกช่วงเป็นการประมาณ (เครื่องหมาย ~ คือโดยประมาณ) ปรับได้ตามเที่ยวบินและรถที่จองจริง</p>
+    <div class="route" aria-label="เส้นทาง">
+      <span class="stop">BKK</span><span class="arrow">→</span>
+      <span class="stop">Lang Co</span><span class="arrow">→</span>
+      <span class="stop">Ba Na Hills</span><span class="arrow">→</span>
+      <span class="stop">Hanoi</span><span class="arrow">→</span>
+      <span class="stop">Sapa</span><span class="arrow">→</span>
+      <span class="stop">Hanoi</span><span class="arrow">→</span>
+      <span class="stop">BKK</span>
+    </div>
+  </header>
+
+  <nav aria-label="ข้ามไปแต่ละวัน">
+    <a href="#d1">2 พ.ย.</a><a href="#d2">3 พ.ย.</a><a href="#d3">4 พ.ย.</a><a href="#d4">5 พ.ย.</a>
+    <a href="#d5">6 พ.ย.</a><a href="#d6">7 พ.ย.</a><a href="#d7">8 พ.ย.</a><a href="#logistics">การเดินทาง</a>
+  </nav>
+
+  <div class="check">
+    <h2>ที่ควรเช็กก่อนจอง</h2>
+    <ul>
+      <li><b>เที่ยวบินกลับ 15:00 วันที่ 8 พ.ย.:</b> ต้องออกจากโรงแรมในฮานอยราว 11:45 เพื่อถึงสนามบินก่อนบินอย่างน้อย 2 ชม. ผมปรับตารางวันที่ 7 ให้แล้ว ถ้าอยากเที่ยวฮานอยถึงบ่าย ให้จองเที่ยวบินหลัง 17:00</li>
+      <li><b>วันที่ 2 มีหลายตัวเลือก:</b> เลือกทำ 2–3 อย่างก็พอ เพราะ Bach Ma และคาเฟ่ในดานังอยู่คนละทิศ</li>
+      <li><b>ฤดูฝนภาคกลาง:</b> ลางโกและบ่าหน่าฮิลส์ช่วงปลายปีฝนชุก ทะเลอาจแรง เตรียมแผนสำรองในร่ม</li>
+      <li><b>ที่ผมยังไม่ได้ยืนยัน:</b> ชื่อและเวลาเปิดของคาเฟ่ที่ระบุ (NAM House, The Mist Sapa, Cafe Bao Cap Sa Pa, Moana Sapa, Roang Cafe) และสะพานไม้ที่ Lap An Lagoon ตรวจก่อนไป</li>
+    </ul>
+  </div>
+
+  <!-- DAY 1 -->
+  <section class="day" id="d1">
+    <div class="day-head">
+      <span class="eyebrow">วันที่ 1 · จันทร์ 2 พ.ย.</span>
+      <h2>บินเข้าดานัง เข้าพัก Banyan Tree Lang Co</h2>
+    </div>
+    <div class="tl">
+      <div class="row"><div class="time">~06:30–09:00</div><div class="body"><strong>ออกจากสุวรรณภูมิ/ดอนเมือง สู่สนามบินนานาชาติดานัง (DAD)</strong><span class="sub">ใช้เวลาบินประมาณ 1 ชม. 40 นาที (บินตรงมีราว 4–5 เที่ยวต่อวัน)</span></div></div>
+      <div class="row"><div class="time">~10:30–12:00</div><div class="body"><strong>ถึงดานัง รถรับส่งของรีสอร์ทมารับ</strong><span class="sub">ไปลางโกประมาณ 1–1.5 ชม. วิวชายหาดและภูเขา ผ่านอุโมงค์ไห่วาน เว็บจองห้องระบุว่ามีรถรับส่งสนามบินฟรี ยืนยันกับโรงแรมว่าฟรีไป-กลับหรือเที่ยวเดียว</span></div></div>
+      <div class="row"><div class="time">~12:00–14:00</div><div class="body"><strong>เช็กอินพูลวิลล่า และมื้อกลางวัน</strong><span class="sub">ทานริมทะเล รีสอร์ทมี 3 ร้านอาหารและบาร์ และใช้ร้านของ Angsana ที่อยู่ติดกันได้</span></div></div>
+      <div class="row"><div class="time">~14:00–18:00</div><div class="body"><strong>กิจกรรมช่วงบ่าย (เลือกตามชอบ)</strong>
+        <ul>
+          <li>เดินเล่นชายหาดของอ่าวลางโก (Lang Co Bay) ที่ได้รับการยกย่องว่าเป็นหนึ่งในอ่าวที่สวยที่สุดในโลก</li>
+          <li>ปั่นจักรยานสำรวจหมู่บ้านชาวประมงใกล้รีสอร์ท สัมผัสวิถีชีวิตดั้งเดิม</li>
+          <li>นวดสปา Banyan Tree</li>
+        </ul>
+      </div></div>
+      <div class="row"><div class="time">~18:00–19:00</div><div class="body"><strong>Sundown Ritual ที่ชายหาด (ถ้ามีในตารางเดือนนี้)</strong><span class="sub">ตารางที่ผมเห็นเป็นของเดือนมิถุนายน 2026 ขอตารางเดือนพฤศจิกายนจากรีสอร์ท</span></div></div>
+      <div class="row"><div class="time">~19:00</div><div class="body"><strong>อาหารค่ำริมชายหาดในรีสอร์ท</strong></div></div>
+    </div>
+  </section>
+
+  <!-- DAY 2 -->
+  <section class="day" id="d2">
+    <div class="day-head">
+      <span class="eyebrow">วันที่ 2 · อังคาร 3 พ.ย.</span>
+      <h2>ดื่มด่ำธรรมชาติลางโก และเที่ยวเมืองใกล้เคียง</h2>
+    </div>
+    <div class="tl">
+      <div class="row"><div class="time">~08:30–10:00</div><div class="body"><strong>อาหารเช้าบุฟเฟต์นานาชาติที่รีสอร์ท</strong></div></div>
+      <div class="row"><div class="time">~10:30–15:00</div><div class="body"><strong>เที่ยวนอกรีสอร์ท (เลือก 2–3 อย่าง)</strong>
+        <ul>
+          <li><b>Lap An Lagoon:</b> แหล่งเลี้ยงหอยนางรมชื่อดัง ถ่ายรูปสะพานไม้กลางน้ำ บ้านยกพื้น และวิถีชีวิตชาวประมง</li>
+          <li><b>Hai Van Pass (ช่องเขาไห่วาน):</b> ถนนชายฝั่งที่ขึ้นชื่อที่สุดของภาคกลาง จากจุดสูงมองเห็นหาดลางโกและทะเลสาบลับอานพร้อมกัน มีทัวร์จิ๊ปและ Easy Rider ถ้าอยากนั่งสบาย ให้ใช้รถของโรงแรม</li>
+          <li><b>อุทยานแห่งชาติ Bach Ma:</b> ถ้าชอบเดินป่าและชมน้ำตกธรรมชาติ หรือเลือกนั่งเรือชมวิวทะเลสาบแบบผ่อนคลาย</li>
+          <li><b>NAM House Cafe (ดานัง):</b> คาเฟ่วินเทจตกแต่งด้วยเฟอร์นิเจอร์ไม้โบราณ จิบไข่กาแฟ (Egg Coffee) หรือชาสมุนไพร อยู่ห่างราว 1–1.5 ชม. เหมาะถ้าเลือกไปทางดานัง</li>
+        </ul>
+      </div></div>
+      <div class="row"><div class="time">~16:00</div><div class="body"><strong>กลับรีสอร์ท พักผ่อน</strong><span class="sub">เล่นน้ำในพูลวิลล่า หรือใช้สิ่งอำนวยความสะดวก เช่น สนามกอล์ฟ Laguna Golf</span></div></div>
+      <div class="row"><div class="time">~18:30</div><div class="body"><strong>อาหารเวียดนามพื้นบ้านสไตล์เซนทรัล</strong><span class="sub">เช่น บั๋นหมี่ อาหารทะเลสด ที่ห้องอาหารรีสอร์ทหรือร้านท้องถิ่นในอ่าวลางโก</span></div></div>
+    </div>
+    <div class="note warn"><b>แผนสำรองถ้าฝนตกหนัก:</b> เลื่อนไปช่องเขาไห่วานช่วงที่ฟ้าเปิด หรือใช้วันนี้ที่รีสอร์ท สปา และกิจกรรมในร่ม</div>
+  </section>
+
+  <!-- DAY 3 -->
+  <section class="day" id="d3">
+    <div class="day-head">
+      <span class="eyebrow">วันที่ 3 · พุธ 4 พ.ย.</span>
+      <h2>ตะลุยเมืองแห่งความฝัน บ่าหน่าฮิลส์</h2>
+      <span class="where">เข้าพักบนเขา 1 คืน</span>
+    </div>
+    <div class="tl">
+      <div class="row"><div class="time">~09:00–10:30</div><div class="body"><strong>เช็กเอาต์ Banyan Tree Lang Co เดินทางไปเชิงเขา</strong><span class="sub">ไปฐานกระเช้าประมาณ 1.5–2 ชม.</span></div></div>
+      <div class="row"><div class="time">~11:00</div><div class="body"><strong>นั่งกระเช้าข้ามภูเขาสู่ยอดเขา</strong><span class="sub">ตั๋วมาตรฐานรวมกระเช้าไป-กลับ ราว $34–39 ปี 2026 ใช้ได้ต่อเนื่องสูงสุด 3 วัน ถามโรงแรมว่าตั๋วรวมในห้องพักหรือไม่</span></div></div>
+      <div class="row"><div class="time">~11:30–16:00</div><div class="body"><strong>เที่ยวบนยอดเขา</strong>
+        <ul>
+          <li>Golden Bridge (สะพานทองคำ) มีมือยักษ์พยุงสะพาน เช็กอินถ่ายรูป</li>
+          <li>สวนดอกไม้สไตล์ฝรั่งเศส Le Jardin d&rsquo;Amour และโรงบ่มไวน์ Debay Wine Cellar</li>
+          <li>มื้อกลางวันบุฟเฟต์นานาชาติบนยอดเขา</li>
+        </ul>
+      </div></div>
+      <div class="row"><div class="time">~16:00</div><div class="body"><strong>เช็กอินโรงแรมบนบ่าหน่าฮิลส์</strong><span class="sub">เช่น Mercure Danang French Village Bana Hills ยืนยันชื่อโรงแรมที่จองจริง</span></div></div>
+      <div class="row"><div class="time">~17:00 เป็นต้นไป</div><div class="body"><strong>เดินเล่นหมู่บ้านฝรั่งเศสยามค่ำ</strong><span class="sub">เมื่อนักท่องเที่ยวไปเช้าเย็นกลับลงเขาหมดแล้ว บรรยากาศเงียบและอากาศเย็นสบาย พร้อมสนุกกับ Fantasy Park และลานเบียร์ยามค่ำ</span></div></div>
+    </div>
+    <div class="note"><b>เตรียมเสื้อกันหนาวบาง ๆ:</b> บนเขาเย็นกว่าตัวเมืองดานังราว 5–10 องศา และหมอกมักลงช่วงกลางวัน</div>
+  </section>
+
+  <!-- DAY 4 -->
+  <section class="day" id="d4">
+    <div class="day-head">
+      <span class="eyebrow">วันที่ 4 · พฤหัส 5 พ.ย.</span>
+      <h2>ลงจากบ่าหน่าฮิลส์ บินสู่ฮานอย แล้วขึ้นซาปา</h2>
+      <span class="where">วันเดินทางหนักที่สุดของทริป</span>
+    </div>
+    <div class="tl">
+      <div class="row"><div class="time">~08:30–10:00</div><div class="body"><strong>อาหารเช้า ชมทะเลหมอกยามเช้า</strong><span class="sub">เก็บบรรยากาศรอบหมู่บ้านฝรั่งเศส</span></div></div>
+      <div class="row"><div class="time">~10:30–12:00</div><div class="body"><strong>นั่งกระเช้าลง ไปสนามบินดานัง (DAD)</strong><span class="sub">จากฐานกระเช้าราว 45 นาที</span></div></div>
+      <div class="row"><div class="time">~13:30–15:00</div><div class="body"><strong>บินดานัง → ฮานอย (HAN)</strong><span class="sub">บินตรงราว 1 ชม. 20 นาที มีหลายเที่ยวต่อวัน จองเที่ยวไม่เกิน 15:00 เพื่อให้ถึงซาปาไม่ดึกเกินไป</span></div></div>
+      <div class="row"><div class="time">~15:30–21:30</div><div class="body"><strong>ลิมูซีนแวน VIP จากฮานอยขึ้นซาปา</strong><span class="sub">ผ่านทางด่วนเส้นใหม่ ใช้เวลาประมาณ 5–6 ชม.</span></div></div>
+      <div class="row"><div class="time">~21:30</div><div class="body"><strong>ถึงซาปา เช็กอิน Viettrekking Sapa (VTK)</strong><span class="sub">พักผ่อนตามอัธยาศัย แจ้งโรงแรมล่วงหน้าว่าจะถึงดึก</span></div></div>
+    </div>
+    <div class="note warn"><b>ความเสี่ยง:</b> ถ้าเที่ยวบินออก 15:00 จะถึงซาปาราว 22:30–23:00 และถ้าดีเลย์จะเลยเที่ยงคืน เลือกตั๋วที่เปลี่ยนวันเวลาได้ และไม่ควรเลือกเที่ยวบินหลัง 16:00</div>
+  </section>
+
+  <!-- DAY 5 -->
+  <section class="day" id="d5">
+    <div class="day-head">
+      <span class="eyebrow">วันที่ 5 · ศุกร์ 6 พ.ย.</span>
+      <h2>สายหมอกและวิถีชุมชนซาปา</h2>
+    </div>
+    <div class="tl">
+      <div class="row"><div class="time">~07:30–09:00</div><div class="body"><strong>อาหารเช้าและกาแฟอุ่น ๆ ที่โรงแรม</strong><span class="sub">ชมวิวทะเลหมอกจากระเบียง</span></div></div>
+      <div class="row"><div class="time">~09:30–12:30</div><div class="body"><strong>หมู่บ้านกั๊ตกั๊ต (Cat Cat Village)</strong><span class="sub">ขับราว 10 นาทีจากตัวเมือง หมู่บ้านชาวม้งกลางหุบเขา บันไดหินลงเขา น้ำตกกลางหมู่บ้าน การแสดงพื้นเมือง ชมการทอผ้า และถ่ายรูปกับชุดพื้นเมือง ช่วงบ่ายอาจนั่งรถไป Y Linh Ho ชมนาขั้นบันไดเพิ่ม</span></div></div>
+      <div class="row"><div class="time">~13:00–15:30</div><div class="body"><strong>มื้อกลางวันและเดินเล่นในเมือง</strong>
+        <ul>
+          <li>ลองแซลมอนซาปาและหม้อไฟปลาสเตอร์เจียน เมนูท้องถิ่นชื่อดัง</li>
+          <li>เดินชมโบสถ์หินซาปา (Sapa Stone Church) กลางเมือง</li>
+          <li>พักชมวิวหมอกที่ The Mist Sapa หรือบรรยากาศย้อนยุคที่ Cafe Bao Cap Sa Pa</li>
+        </ul>
+      </div></div>
+      <div class="row"><div class="time">~16:00–18:30</div><div class="body"><strong>ตลาดกลางคืนและทะเลสาบซาปา</strong><span class="sub">ตลาดกลางคืน ถนน Cau May และโบสถ์หินอยู่ในระยะเดินจากโรงแรมไม่เกิน 500 ม. ขากลับขึ้นเนินชัน เดินรอบทะเลสาบชมพระอาทิตย์ตกกระทบยอดเขา</span></div></div>
+      <div class="row"><div class="time">~19:00</div><div class="body"><strong>มื้อค่ำปิ้งย่างสไตล์ซาปา</strong><span class="sub">ท่ามกลางอากาศเย็น</span></div></div>
+    </div>
+    <div class="note"><b>ทางเลือกเต็มวัน:</b> เดินป่าหุบเขา Muong Hoa ผ่านหมู่บ้านม้งดำ Lao Chai และหมู่บ้านไต Ta Van ทัวร์ส่วนตัวราว 9 ชม. รวมรถรับส่ง มีรถรับที่โรงแรม จองผ่านโรงแรมหรือเอเจนซี่ในตัวเมือง ใช้แทนแผนด้านบนทั้งวัน</div>
+    <div class="note warn"><b>นาขั้นบันไดเดือนพฤศจิกายน:</b> ช่วงทองสวยสุดคือ ก.ย.–ต.ค. ปลายเดือน พ.ย. ข้าวอาจเก็บเกี่ยวแล้ว แต่ทิวเขาและหมู่บ้านยังสวย กลางคืนเย็นจัดและเปียกชื้น เตรียมเสื้อกันหนาวและรองเท้ากันลื่น</div>
+  </section>
+
+  <!-- DAY 6 -->
+  <section class="day" id="d6">
+    <div class="day-head">
+      <span class="eyebrow">วันที่ 6 · เสาร์ 7 พ.ย.</span>
+      <h2>พิชิตหลังคาอินโดจีน Fansipan แล้วลงฮานอย</h2>
+      <span class="where">นอนฮานอย 1 คืน (ต้องจองโรงแรมเพิ่ม)</span>
+    </div>
+    <div class="tl">
+      <div class="row"><div class="time">~08:30–11:00</div><div class="body"><strong>อาหารเช้า ฝากกระเป๋า แล้วขึ้น Fansipan Legend</strong><span class="sub">ไปสถานีรถราง ขึ้นกระเช้าไฟฟ้าแล้วต่อรถรางสู่จุดสูงสุดของอินโดจีน (3,143 ม.) ไหว้พระพุทธรูปและชมทะเลหมอกแบบพาโนรามา</span></div></div>
+      <div class="row"><div class="time">~11:00–12:30</div><div class="body"><strong>มื้อกลางวันและของฝากในเมืองซาปา</strong><span class="sub">ช้อปงานฝีมือชาวเขาที่ตลาดซาปา หรือคาเฟ่วิวสวย เช่น Moana Sapa, Roang Cafe</span></div></div>
+      <div class="row"><div class="time">~12:30–18:30</div><div class="body"><strong>ซาปา → ฮานอย</strong><span class="sub">รถราว 5.5–6 ชม. รวมจุดพัก ผ่านทางด่วนลาวไก–ฮานอย ถึงราว 18:00–18:30 แล้วเช็กอินโรงแรมในฮานอย</span></div></div>
+      <div class="row"><div class="time">~19:00</div><div class="body"><strong>มื้อเย็นย่านเมืองเก่า</strong><span class="sub">บุ๋นจ๋า ผัดเฝอ หรือเดินกินของว่าง ไข่กาแฟ (egg coffee) เป็นของฮานอยแท้</span></div></div>
+    </div>
+    <div class="note"><b>เรื่องตั๋ว:</b> โรงแรมขายตั๋วคอมโบกระเช้าและรถราง ช่วยลดเวลาต่อคิว ตรวจเวลาเปิดล่าสุดกับโรงแรม</div>
+  </section>
+
+  <!-- DAY 7 -->
+  <section class="day" id="d7">
+    <div class="day-head">
+      <span class="eyebrow">วันที่ 7 · อาทิตย์ 8 พ.ย.</span>
+      <h2>เช้าที่ฮานอย แล้วบินกลับกรุงเทพ</h2>
+    </div>
+    <div class="tl">
+      <div class="row"><div class="time">~07:30–10:00</div><div class="body"><strong>อาหารเช้า เดินทะเลสาบ Hoan Kiem และเมืองเก่า</strong></div></div>
+      <div class="row"><div class="time">~10:00–11:30</div><div class="body"><strong>ซื้อของฝาก</strong><span class="sub">กาแฟเวียดนาม เม็ดมะม่วงหิมพานต์ ขนมท้องถิ่น</span></div></div>
+      <div class="row"><div class="time">~11:45</div><div class="body"><strong>เช็กเอาต์ ไปสนามบินนอยบ่าย</strong><span class="sub">ใช้เวลาราว 45–60 นาที (ผมประมาณ ยืนยันกับโรงแรม) ทานมื้อกลางวันที่สนามบิน</span></div></div>
+      <div class="row"><div class="time">~15:00</div><div class="body"><strong>บิน HAN → BKK</strong><span class="sub">บินตรงมีประมาณ 10–11 เที่ยวต่อวัน</span></div></div>
+    </div>
+    <div class="note"><b>ถ้าอยากอยู่ฮานอยนานขึ้น:</b> จองเที่ยวบินกลับหลัง 17:00 แล้วเลื่อนมื้อกลางวันและการเช็กเอาต์ไปเป็นราว 14:00 ได้</div>
+  </section>
+
+  <h2 class="sec" id="logistics">เส้นทางและเวลาเดินทางโดยประมาณ</h2>
+  <div class="scroll">
+    <table>
+      <thead><tr><th>ช่วง</th><th>วิธี</th><th>เวลา</th><th>หมายเหตุ</th></tr></thead>
+      <tbody>
+        <tr><td>BKK → ดานัง</td><td>บินตรง</td><td class="n">~1 ชม. 40 นาที</td><td>4–5 เที่ยวต่อวัน</td></tr>
+        <tr><td>สนามบินดานัง → Banyan Tree</td><td>รถโรงแรม</td><td class="n">~1–1.5 ชม.</td><td>ยืนยันรถรับส่งฟรี</td></tr>
+        <tr><td>Banyan Tree → ฐานกระเช้า</td><td>รถส่วนตัว</td><td class="n">~1.5–2 ชม.</td><td>ประมาณ ยืนยันกับโรงแรม</td></tr>
+        <tr><td>ฐานกระเช้า → สนามบินดานัง</td><td>รถ / Grab</td><td class="n">~45 นาที</td><td></td></tr>
+        <tr><td>ดานัง → ฮานอย</td><td>บินตรง</td><td class="n">~1 ชม. 20 นาที</td><td>หลายเที่ยวต่อวัน</td></tr>
+        <tr><td>นอยบ่าย → ซาปา</td><td>ลิมูซีนแวน / รถส่วนตัว</td><td class="n">~4.5–6 ชม.</td><td>ทางด่วน แล้วขึ้นเขาราว 1–1.5 ชม.</td></tr>
+        <tr><td>ซาปา → ฮานอย</td><td>รถ / แวน</td><td class="n">~5.5–6 ชม.</td><td>ไม่มีรถไฟตรงจากซาปา</td></tr>
+        <tr><td>ฮานอย → BKK</td><td>บินตรง</td><td class="n">~2 ชม.</td><td>10–11 เที่ยวต่อวัน</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="sec">ที่ผมต้องการจากคุณเพื่อปรับแพลน</h2>
+  <div class="cols">
+    <div>
+      <h3>ข้อมูลที่ยังขาด</h3>
+      <ul>
+        <li>ชื่อโรงแรมบนบ่าหน่าฮิลส์ที่จองจริง</li>
+        <li>เที่ยวบินที่จองแล้ว (ถ้ามี)</li>
+        <li>จำนวนคนและความชอบ (ผจญภัย หรือพักผ่อน)</li>
+        <li>โรงแรมฮานอยคืนวันที่ 7</li>
+      </ul>
+    </div>
+    <div>
+      <h3>เตรียมของ</h3>
+      <ul>
+        <li>ร่ม เสื้อกันฝน รองเท้ากันลื่น</li>
+        <li>เสื้อกันหนาว สำหรับบ่าหน่าและซาปา</li>
+        <li>เงินดองสำหรับตลาดและหมู่บ้าน</li>
+        <li>ยาแก้เมารถสำหรับทางขึ้นซาปา</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2 class="sec">แหล่งข้อมูล</h2>
+  <div class="src">
+    ราคา เวลาเปิด และเวลารถอาจเปลี่ยน ตรวจกับโรงแรมและผู้ให้บริการอีกครั้งก่อนเดินทาง
+    <ul>
+      <li><a href="https://localvietnam.com/hue/lap-an-lagoon/">Lap An Lagoon (Local Vietnam)</a></li>
+      <li><a href="https://hoiandaytrip.com/things-to-do-in-lang-co-vietnam/">Things to do in Lang Co (Hoi An Day Trip)</a></li>
+      <li><a href="https://www.banyantree.com/assets/2026-06/%5BEN%5D%20JUNE%202026%20BT%20Resort%20Booklet.pdf">Banyan Tree Lang Co Activities Booklet (June 2026)</a></li>
+      <li><a href="https://www.expedia.com/Da-Nang-Hotels-Banyan-Tree-Lang-Co.h5241400.Hotel-Information">Banyan Tree Lang Co (Expedia)</a></li>
+      <li><a href="https://adamandlinds.com/ba-na-hills/">Ba Na Hills 2026 (Adam and Linds)</a></li>
+      <li><a href="https://hoiandaytrip.com/?p=128962">Ba Na Hills itinerary (Hoi An Day Trip)</a></li>
+      <li><a href="https://www.trvlogue.com/en/ba-na-hills-da-nang-guide-2">Ba Na Hills guide (Trvlogue)</a></li>
+      <li><a href="https://www.vietnamtourism.com/en/hanoi-to-sapa-in-2026-trains-buses-costs-compared">Hanoi to Sapa 2026 (Vietnam Tourism)</a></li>
+      <li><a href="https://asiamystika.com/blog/hanoi-to-sapa-by-car">Hanoi to Sapa by car (Asia Mystika)</a></li>
+      <li><a href="https://localvietnam.com/hanoi/from-sapa-to-hanoi/">From Sapa to Hanoi (Local Vietnam)</a></li>
+      <li><a href="https://www.vietnamairlines.com/us/en/plan-book/travel/travel-guide/sapa-attractions">Sapa attractions (Vietnam Airlines)</a></li>
+      <li><a href="https://www.expatolife.com/things-to-do-in-sapa-vietnam/">Things to do in Sapa (Expatolife)</a></li>
+      <li><a href="https://www.expedia.com.my/things-to-do/private-sapa-valley-trekking-full-day-tour.a508857.activity-details">Private Sapa Valley Trekking (Expedia)</a></li>
+      <li><a href="https://sunparadiseland.com/en/tin-tuc/viettrekking-sapa-hotel-leisure-and-cloud-hunting-2025-12638">Viettrekking Sapa Hotel (Sun Paradise Land)</a></li>
+      <li><a href="https://www.vietnamairlines.com/en-vn/flights-from-da-nang-to-hanoi">Da Nang to Hanoi flights (Vietnam Airlines)</a></li>
+      <li><a href="https://flights.idealo.com/route/Bangkok-BKK/Vietnam-VN/">Bangkok to Vietnam flights (idealo)</a></li>
+    </ul>
+  </div>
+</div>
+
+</body></html>
