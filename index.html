@@ -13,10 +13,10 @@
     
     <style>
         :root {
-            --primary: #8B2613; /* Terracotta Red */
+            --primary: #8B2613; /* Terracotta Red - Vietnam Traditional Accent */
             --primary-light: #FDF6F0;
-            --secondary: #1F4E3D; /* Indochina Forest Green */
-            --gold: #D4AF37;
+            --secondary: #1F4E3D; /* Indochina Deep Forest Green */
+            --gold: #D4AF37; /* Imperial Gold */
             --dark: #2B2D42;
             --light-bg: #FAF9F6;
             --card-bg: #FFFFFF;
@@ -41,12 +41,14 @@
             padding-bottom: 60px;
         }
 
+        /* Container */
         .container {
             max-width: 900px;
             margin: 0 auto;
             padding: 20px;
         }
 
+        /* Header Card */
         .header-card {
             background: linear-gradient(135deg, var(--secondary) 0%, #0F2A21 100%);
             color: white;
@@ -57,6 +59,17 @@
             box-shadow: var(--shadow);
             margin-bottom: 30px;
             overflow: hidden;
+        }
+
+        .header-card::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(212,175,55,0.2) 0%, rgba(0,0,0,0) 70%);
+            border-radius: 50%;
         }
 
         .header-title {
@@ -91,6 +104,7 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
+        /* Print & Control Buttons */
         .controls {
             display: flex;
             justify-content: flex-end;
@@ -121,6 +135,7 @@
             border-color: var(--primary);
         }
 
+        /* Timeline Navigation */
         .nav-days {
             display: flex;
             overflow-x: auto;
@@ -150,6 +165,12 @@
             color: var(--primary);
         }
 
+        .nav-day-item:hover {
+            border-color: var(--primary);
+            box-shadow: var(--shadow);
+        }
+
+        /* Day Card Styles */
         .day-card {
             background: var(--card-bg);
             border-radius: var(--radius);
@@ -204,6 +225,7 @@
             padding: 25px;
         }
 
+        /* Timeline Items */
         .timeline-item {
             display: flex;
             gap: 20px;
@@ -260,6 +282,7 @@
             margin-bottom: 8px;
         }
 
+        /* Flight & Transport Box */
         .flight-box {
             background: #F0F7F4;
             border-left: 4px solid var(--secondary);
@@ -277,6 +300,7 @@
             color: var(--secondary);
         }
 
+        /* Tags & Badges */
         .map-link {
             display: inline-flex;
             align-items: center;
@@ -310,6 +334,7 @@
             align-items: flex-start;
         }
 
+        /* Option List */
         .option-list {
             list-style: none;
             margin-top: 8px;
@@ -331,6 +356,7 @@
             left: 0;
         }
 
+        /* Footer */
         .footer {
             text-align: center;
             padding: 20px;
@@ -338,17 +364,46 @@
             color: var(--text-muted);
         }
 
+        /* Print Optimization */
         @media print {
-            body { background: white; padding-bottom: 0; }
-            .container { max-width: 100%; padding: 0; }
-            .controls, .nav-days { display: none; }
-            .day-card { box-shadow: none; border: 1px solid #ccc; page-break-inside: avoid; margin-bottom: 20px; }
+            body {
+                background: white;
+                padding-bottom: 0;
+            }
+            .container {
+                max-width: 100%;
+                padding: 0;
+            }
+            .controls, .nav-days {
+                display: none;
+            }
+            .day-card {
+                box-shadow: none;
+                border: 1px solid #ccc;
+                page-break-inside: avoid;
+                margin-bottom: 20px;
+            }
+            .header-card {
+                background: var(--secondary) !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            .map-link {
+                border: 1px solid var(--secondary);
+            }
         }
 
         @media (max-width: 600px) {
-            .timeline-item { flex-direction: column; gap: 6px; }
-            .timeline-item::before { display: none; }
-            .time-badge { width: fit-content; }
+            .timeline-item {
+                flex-direction: column;
+                gap: 6px;
+            }
+            .timeline-item::before {
+                display: none;
+            }
+            .time-badge {
+                width: fit-content;
+            }
         }
     </style>
 </head>
@@ -356,10 +411,12 @@
 
 <div class="container">
 
+    <!-- Control Bar -->
     <div class="controls">
         <button class="btn" onclick="window.print()"><i class="fa-solid fa-print"></i> พิมพ์ / Export PDF</button>
     </div>
 
+    <!-- Header Card -->
     <div class="header-card">
         <h1 class="header-title">Vietnam Expedition</h1>
         <div class="header-subtitle">ดานัง • อ่าวลั่งโค • บาน่าฮิลส์ • ซาปา • ฮานอย</div>
@@ -370,6 +427,7 @@
         </div>
     </div>
 
+    <!-- Quick Navigation -->
     <div class="nav-days">
         <a href="#day1" class="nav-day-item"><span>D1</span>2 พ.ย.</a>
         <a href="#day2" class="nav-day-item"><span>D2</span>3 พ.ย.</a>
@@ -393,6 +451,7 @@
             <a href="https://maps.app.goo.gl/354B4B1aL1qFjAn4A" target="_blank" class="map-link"><i class="fa-solid fa-location-dot"></i> Banyan Tree Lang Co</a>
         </div>
         <div class="day-body">
+            
             <div class="timeline-item">
                 <div class="time-badge">07:25 - 09:05</div>
                 <div class="content-box">
@@ -403,39 +462,53 @@
                     </div>
                 </div>
             </div>
+
             <div class="timeline-item">
                 <div class="time-badge">10:30 - 12:00</div>
                 <div class="content-box">
                     <div class="content-title">เดินทางสู่อ่าวลั่งโค (Lang Co Bay)</div>
-                    <div class="content-desc">รถรับส่งของรีสอร์ทมารับที่สนามบินดานัง เดินทางเลียบชายหาดและลอดอุโมงค์ไห่วาน ใช้เวลาประมาณ 1 - 1.5 ชม.</div>
+                    <div class="content-desc">รถรับส่งของรีสอร์ทมารับที่สนามบินดานัง เดินทางเลียบชายหาดและลอดอุโมงค์ไห่วาน (Hai Van Tunnel) ใช้เวลาประมาณ 1 - 1.5 ชม.</div>
+                    <a href="https://maps.app.goo.gl/9z4eE75S1E86sJ2A7" target="_blank" class="map-link"><i class="fa-solid fa-map-pin"></i> Hai Van Pass / Tunnel</a>
                 </div>
             </div>
+
             <div class="timeline-item">
                 <div class="time-badge">12:00 - 14:00</div>
                 <div class="content-box">
                     <div class="content-title">Check-in พูลวิลล่า & มื้อกลางวันริมทะเล</div>
-                    <div class="content-desc">เช็คอินเข้าพักที่ Banyan Tree Lang Co และรับประทานมื้อกลางวันริมทะเล</div>
+                    <div class="content-desc">เช็คอินเข้าพักที่ Banyan Tree Lang Co ดื่มด่ำกับความเป็นส่วนตัว และเลือกรับประทานมื้อกลางวันริมทะเล (สามารถใช้บริการห้องอาหารของ Angsana ที่อยู่ติดกันได้)</div>
                 </div>
             </div>
+
             <div class="timeline-item">
                 <div class="time-badge">14:00 - 18:00</div>
                 <div class="content-box">
-                    <div class="content-title">กิจกรรมพักผ่อนตามอัธยาศัย</div>
+                    <div class="content-title">กิจกรรมพักผ่อนตามอัธยาศัย (Recommended Choices)</div>
                     <ul class="option-list">
-                        <li>เดินเล่นชายหาดอ่าวลั่งโค (Lang Co Bay)</li>
-                        <li>ปั่นจักรยานสำรวจวิถีชีวิตหมู่บ้านชาวประมงท้องถิ่น</li>
-                        <li>จิบกาแฟที่ Lap An Lagoon ชมฟาร์มเลี้ยงหอยนางรม</li>
-                        <li>ผ่อนคลายกับ Banyan Tree Spa</li>
+                        <li>เดินเล่นชายหาดอ่าวลั่งโค (Lang Co Bay) หนึ่งในอ่าวธรรมชาติที่สวยระดับโลก</li>
+                        <li>ปั่นจักรยานสำรวจวิถีชีวิตหมู่บ้านชาวประมงท้องถิ่นรอบรีสอร์ท</li>
+                        <li>จิบกาแฟโบราณที่ <a href="https://maps.app.goo.gl/g6S4E4832S2xM3g68" target="_blank" class="map-link"><i class="fa-solid fa-location-dot"></i> Lap An Lagoon Cafe</a> ชมฟาร์มเลี้ยงหอยนางรม</li>
+                        <li>ผ่อนคลายกับ Banyan Tree Spa สปาระดับรางวัลโลก</li>
                     </ul>
                 </div>
             </div>
+
+            <div class="timeline-item">
+                <div class="time-badge">18:00 - 19:00</div>
+                <div class="content-box">
+                    <div class="content-title">Sundown Ritual</div>
+                    <div class="content-desc">ชมพิธีอาทิตย์ตกดินริมหาดของรีสอร์ท (สอบถาม ตารางประจำวัน ณ วันเช็คอิน)</div>
+                </div>
+            </div>
+
             <div class="timeline-item">
                 <div class="time-badge">19:00 เป็นต้นไป</div>
                 <div class="content-box">
                     <div class="content-title">มื้อค่ำสุดโรแมนติก</div>
-                    <div class="content-desc">รับประทานอาหารค่ำบรรยากาศดีริมหาดภายในรีสอร์ท</div>
+                    <div class="content-desc">รับประทานอาหารค่ำบรรยากาศดีริมหาดภายในรีสอร์ท หรือเลือกชิมอาหารทะเลสด local สไตล์เซนทรัล</div>
                 </div>
             </div>
+
         </div>
     </div>
 
@@ -452,47 +525,46 @@
             <a href="https://maps.app.goo.gl/9GzR1f3YJk34Y83K8" target="_blank" class="map-link"><i class="fa-solid fa-location-dot"></i> Sun World Ba Na Hills</a>
         </div>
         <div class="day-body">
+
             <div class="timeline-item">
-                <div class="time-badge">08:30 - 09:30</div>
+                <div class="time-badge">08:30 - 10:00</div>
                 <div class="content-box">
                     <div class="content-title">อาหารเช้าบุฟเฟต์นานาชาติ</div>
                     <div class="content-desc">เติมพลังด้วยอาหารเช้า ณ ห้องอาหารของรีสอร์ท Banyan Tree</div>
                 </div>
             </div>
-            <div class="timeline-item">
-                <div class="time-badge">09:30 - 10:30</div>
-                <div class="content-box">
-                    <div class="content-title">เดินทางสู่เชิงเขาบาน่าฮิลส์</div>
-                    <div class="content-desc">เรียก Grab หรือใช้รถโรงแรมเดินทางจาก Banyan Tree Lang Co ไปยังสถานีกระเช้า Sun World Ba Na Hills (ประมาณ 45-60 นาที)</div>
-                </div>
-            </div>
+
             <div class="timeline-item">
                 <div class="time-badge">10:30 - 19:00</div>
                 <div class="content-box">
                     <div class="content-title">ท่องเที่ยวสวนสนุก Sun World Ba Na Hills</div>
-                    <div class="content-desc">นั่ง Cable Car พิชิตยอดเขา สนุกสนานกับเครื่องเล่นและมุมถ่ายรูปสุดอลังการ</div>
+                    <div class="content-desc">เดินทางไปสถานีกระเช้า นั่ง Cable Car พิชิตยอดเขา ชมวิวทิวทัศน์ธรรมชาติ</div>
                     <ul class="option-list">
-                        <li><b>Golden Bridge (สะพานทองคำ):</b> เช็คอินสะพานมือยักษ์อันเลื่องชื่อ <a href="https://maps.app.goo.gl/o1kZ4xS2Y3S2" target="_blank" class="map-link"><i class="fa-solid fa-location-dot"></i> Golden Bridge</a></li>
-                        <li><b>Le Jardin d’Amour & Debay Wine Cellar:</b> ชมสวนดอกไม้สไตล์ฝรั่งเศสและโรงไวน์โบราณ</li>
+                        <li><b>Golden Bridge (สะพานทองคำ):</b> เช็คอินสะพานมือยักษ์อันเลื่องชื่อระดับโลก <a href="https://maps.app.goo.gl/o1kZ4xS2Y3S2" target="_blank" class="map-link"><i class="fa-solid fa-location-dot"></i> Golden Bridge</a></li>
+                        <li><b>Le Jardin d’Amour & Debay Wine Cellar:</b> ชมสวนดอกไม้สไตล์ฝรั่งเศสและโรงบ่มไวน์โบราณ</li>
                         <li><b>Lunch Buffet:</b> รับประทานอาหารกลางวันบุฟเฟต์นานาชาติบนยอดเขา</li>
-                        <li><b>French Village & Fantasy Park:</b> เดินเล่นเมืองฝรั่งเศสจำลอง สนุกกับสวนสนุกและลานเบียร์</li>
+                        <li><b>French Village & Fantasy Park:</b> เดินเล่นเมืองฝรั่งเศสจำลอง เล่นเครื่องเล่น และจิบเบียร์เย็นๆ ยามบ่าย</li>
                     </ul>
+                    <div class="tip-box"><i class="fa-solid fa-cloud-sun"></i> <b>Tip:</b> อุณหภูมิบนยอดเขาเย็นกว่าด้านล่างประมาณ 5-10°C ควรเตรียมเสื้อแจ็คเก็ตบางๆ ติดตัวไปด้วย</div>
                 </div>
             </div>
+
             <div class="timeline-item">
                 <div class="time-badge">19:30 - 20:30</div>
                 <div class="content-box">
                     <div class="content-title">นั่งกระเช้าลงเขา & เดินทางกลับ Banyan Tree</div>
-                    <div class="content-desc">เดินทางกลับสู่รีสอร์ท Banyan Tree Lang Co</div>
+                    <div class="content-desc">สัมผัสบรรยากาศบาน่าฮิลส์ยามค่ำคืนก่อนนั่งกระเช้าลง และนั่งรถกลับสู่รีสอร์ทพักผ่อน</div>
                 </div>
             </div>
+
             <div class="timeline-item">
                 <div class="time-badge">20:30 เป็นต้นไป</div>
                 <div class="content-box">
                     <div class="content-title">มื้อค่ำสไตล์ Central Vietnam</div>
-                    <div class="content-desc">รับประทานอาหารเวียดนามพื้นบ้าน เช่น Bánh Mì หรือซีฟู้ดสดๆ ในอ่าวลั่งโค</div>
+                    <div class="content-desc">รับประทานอาหารเวียดนามพื้นบ้าน เช่น Bánh Mì หรือซีฟู้ดสดๆ ในบรรยากาศสบายๆ</div>
                 </div>
             </div>
+
         </div>
     </div>
 
@@ -503,26 +575,21 @@
                 <div class="day-number">03</div>
                 <div>
                     <div class="day-date">พุธ 4 พฤศจิกายน 2026</div>
-                    <div class="day-subtitle">ดานัง ➔ ฮานอย ➔ รถไฟตู้นอนสู่อ้อมกอดซาปา</div>
+                    <div class="day-subtitle">ดานัง ➔ ฮานอย ➔ ขึ้นรถไฟตู้นอนสู่อ้อมกอดซาปา</div>
                 </div>
             </div>
             <a href="https://maps.app.goo.gl/9Z2dYg4X5" target="_blank" class="map-link"><i class="fa-solid fa-train"></i> Hanoi Railway Station</a>
         </div>
         <div class="day-body">
+
             <div class="timeline-item">
-                <div class="time-badge">09:00 - 10:00</div>
+                <div class="time-badge">09:00 - 10:30</div>
                 <div class="content-box">
                     <div class="content-title">อาหารเช้า & Check-out</div>
-                    <div class="content-desc">รับประทานอาหารเช้าบุฟเฟต์ที่โรงแรม และเช็คเอาท์เตรียมตัวเดินทาง</div>
+                    <div class="content-desc">ทานอาหารเช้าสบายๆ เช็คเอาท์จาก Banyan Tree เดินทางสู่สนามบินดานัง (DAD)</div>
                 </div>
             </div>
-            <div class="timeline-item">
-                <div class="time-badge">10:30 - 12:00</div>
-                <div class="content-box">
-                    <div class="content-title">เดินทางสู่สนามบินนานาชาติดานัง (DAD)</div>
-                    <div class="content-desc">นั่งรถจาก Banyan Tree Lang Co มุ่งหน้าสู่สนามบินดานังเพื่อเตรียมตัวเช็คอิน (ประมาณ 1 - 1.5 ชม.)</div>
-                </div>
-            </div>
+
             <div class="timeline-item">
                 <div class="time-badge">13:35 - 14:55</div>
                 <div class="content-box">
@@ -532,20 +599,28 @@
                     </div>
                 </div>
             </div>
+
             <div class="timeline-item">
                 <div class="time-badge">15:30 - 20:30</div>
                 <div class="content-box">
                     <div class="content-title">City Walk ย่านเมืองเก่าฮานอย (Hanoi Old Quarter)</div>
-                    <div class="content-desc">ฝากกระเป๋าชั่วคราว แล้วเดินเที่ยวชมเสน่ห์เมืองเก่าฮานอย มื้อเย็นทานบุ๋นจ๋า (Bún Chả) และชิมกาแฟไข่ (Egg Coffee)</div>
+                    <div class="content-desc">นั่งรถเข้าเมือง ฝากกระเป๋าชั่วคราว แล้วออกเดินสัมผัสเสน่ห์ฮานอย:</div>
+                    <ul class="option-list">
+                        <li><b>Hoan Kiem Lake:</b> เดินเล่นรอบทะเลสาบคืนดา ชมสะพานเท็กฮุก <a href="https://maps.app.goo.gl/x2k31" target="_blank" class="map-link"><i class="fa-solid fa-location-dot"></i> Hoan Kiem Lake</a></li>
+                        <li><b>Egg Coffee Origin:</b> ชิมกาแฟไข่ต้นตำรับที่ <a href="https://maps.app.goo.gl/o1S34" target="_blank" class="map-link"><i class="fa-solid fa-mug-hot"></i> Café Giang</a></li>
+                        <li><b>Dinner (Bún Chả):</b> มื้อเย็นทาน บุ๋นจ๋า (หมูย่างน้ำซุปขมิ้น) ร้านดัง <a href="https://maps.app.goo.gl/L92s1" target="_blank" class="map-link"><i class="fa-solid fa-utensils"></i> Bun Cha Dac Kim</a> หรือ Bun Cha Huong Lien</li>
+                    </ul>
                 </div>
             </div>
+
             <div class="timeline-item">
                 <div class="time-badge">21:00 - 22:00</div>
                 <div class="content-box">
-                    <div class="content-title">ขึ้นรถไฟตู้นอน VIP Sleeper Train</div>
-                    <div class="content-desc">เดินทางถึงสถานีรถไฟฮานอย เช็คอินขึ้นรถไฟตู้นอนมุ่งหน้าสู่เมืองลาวไก (ซาปา)</div>
+                    <div class="content-title">เช็คอินรถไฟตู้นอน VIP Sleeper Train</div>
+                    <div class="content-desc">เดินทางถึงสถานีรถไฟฮานอย (Ga Hà Nội - Trần Quý Cáp Exit) เช็คอินขึ้นรถไฟตู้นอนปรับอากาศ VIP สู่เมืองลาวไก (ซาปา)</div>
                 </div>
             </div>
+
         </div>
     </div>
 
@@ -556,60 +631,62 @@
                 <div class="day-number">04</div>
                 <div>
                     <div class="day-date">พฤหัสบดี 5 พฤศจิกายน 2026</div>
-                    <div class="day-subtitle">อรุณสวัสดิ์ซาปา • พิชิตยอดเขาฟานซิปัน & Local Attractions</div>
+                    <div class="day-subtitle">อรุณสวัสดิ์ซาปา • พิชิตยอดเขาฟานซิปัน (Fansipan Peak)</div>
                 </div>
             </div>
             <a href="https://maps.app.goo.gl/Y132m" target="_blank" class="map-link"><i class="fa-solid fa-hotel"></i> Viettrekking Sapa</a>
         </div>
         <div class="day-body">
+
             <div class="timeline-item">
                 <div class="time-badge">06:00 - 07:30</div>
                 <div class="content-box">
                     <div class="content-title">ถึงสถานีลาวไก ➔ นั่งรถตู้ขึ้นเมืองซาปา</div>
-                    <div class="content-desc">เดินทางถึงโรงแรม Viettrekking Sapa (VTK) ฝากกระเป๋า ล้างหน้าแปรงฟัน เปลี่ยนชุด</div>
+                    <div class="content-desc">รถตู้นำส่งถึงโรงแรม Viettrekking Sapa (VTK) ฝากกระเป๋า ล้างหน้า ล้างตา เปลี่ยนชุดเตรียมเที่ยว</div>
                 </div>
             </div>
+
             <div class="timeline-item">
                 <div class="time-badge">07:30 - 08:30</div>
                 <div class="content-box">
                     <div class="content-title">อาหารเช้าวิวทะเลหมอก</div>
-                    <div class="content-desc">ทานมื้อเช้าและจิบกาแฟชมวิวสายหมอก ณ ร้านอาหารเมืองซาปา</div>
+                    <div class="content-desc">ทานมื้อเช้าและจิบกาแฟชมวิวรถรางสายหมอกที่ <a href="https://maps.app.goo.gl/Y132m" target="_blank" class="map-link"><i class="fa-solid fa-mug-hot"></i> Viettrekking Cafe</a> หรือร้าน Pho May ซาปา</div>
                 </div>
             </div>
+
             <div class="timeline-item">
                 <div class="time-badge">08:30 - 12:00</div>
                 <div class="content-box">
                     <div class="content-title">พิชิตยอดเขาฟานซิปัน (Fansipan Legend)</div>
-                    <div class="content-desc">นั่งรถราง Muong Hoa Mountain Train จาก Sun Plaza ต่อด้วยกระเช้าไฟฟ้าขึ้นสู่หลังคาแห่งอินโดจีน (3,143 เมตร)</div>
+                    <div class="content-desc">นั่งรถราง Muong Hoa Mountain Train จากอาคาร Sun Plaza ต่อกระเช้าไฟฟ้าขึ้นสู่หลังคาแห่งอินโดจีน (3,143 เมตร)</div>
+                    <a href="https://maps.app.goo.gl/f81k9" target="_blank" class="map-link"><i class="fa-solid fa-mountain"></i> Sun World Fansipan Legend</a>
                 </div>
             </div>
+
             <div class="timeline-item">
                 <div class="time-badge">12:30 - 14:00</div>
                 <div class="content-box">
-                    <div class="content-title">มื้อกลางวันท้องถิ่น</div>
-                    <div class="content-desc">รับประทานอาหารกลางวันในตัวเมืองซาปา</div>
+                    <div class="content-title">มื้อกลางวัน local & คาเฟ่เก๋ๆ</div>
+                    <div class="content-desc">แวะทานมื้อกลางวันในเมือง และจิบกาแฟถ่ายรูปวิวปังที่ <a href="https://maps.app.goo.gl/k921A" target="_blank" class="map-link"><i class="fa-solid fa-camera"></i> Moana Sapa</a> หรือ <a href="https://maps.app.goo.gl/m3921" target="_blank" class="map-link"><i class="fa-solid fa-mug-hot"></i> The Mist Sapa</a></div>
                 </div>
             </div>
+
             <div class="timeline-item">
                 <div class="time-badge">14:30 - 18:00</div>
                 <div class="content-box">
-                    <div class="content-title">Sapa Local Attractions & Cafe Hopping</div>
-                    <div class="content-desc">สัมผัสเสน่ห์จุดท่องเที่ยวแลนด์มาร์ครอบตัวเมืองซาปา:</div>
-                    <ul class="option-list">
-                        <li><b>Sapa Stone Church:</b> ชมโบสถ์หินโบราณสไตล์ฝรั่งเศสกลางใจเมือง <a href="https://maps.app.goo.gl/sapaChurch" target="_blank" class="map-link"><i class="fa-solid fa-church"></i> Stone Church</a></li>
-                        <li><b>Moana Sapa:</b> จุดถ่ายรูปเช็คอินวิวหุบเขาและทะเลหมอกสุดปัง <a href="https://maps.app.goo.gl/k921A" target="_blank" class="map-link"><i class="fa-solid fa-camera"></i> Moana Sapa</a></li>
-                        <li><b>The Mist Sapa / Cafe Bao Cap:</b> นั่งพักจิบกาแฟชมหมอกมุมสูง หรือสัมผัสบรรยากาศวินเทจย้อนยุค <a href="https://maps.app.goo.gl/m3921" target="_blank" class="map-link"><i class="fa-solid fa-mug-hot"></i> The Mist Sapa</a></li>
-                        <li><b>Sapa Lake Walk:</b> เดินเล่นชิลล์ๆ รอบทะเลสาบซาปา ชมแสงพระอาทิตย์ตกสะท้อนผิวน้ำ</li>
-                    </ul>
+                    <div class="content-title">Check-in เข้าห้องพัก & City Walk</div>
+                    <div class="content-desc">เช็คอินเข้าห้องพัก Viettrekking พักผ่อน แล้วออกเดินเล่นชมโบสถ์หิน (Sapa Stone Church) และเดินชิลล์รอบทะเลสาบซาปายามเย็น</div>
                 </div>
             </div>
+
             <div class="timeline-item">
                 <div class="time-badge">19:00 เป็นต้นไป</div>
                 <div class="content-box">
-                    <div class="content-title">มื้อค่ำเมนูไฮไลท์ "แซลมอน & หม้อไฟปลาสเตอร์เจียน"</div>
-                    <div class="content-desc">ทานชาบูหม้อไฟปลาสเตอร์เจียน/แซลมอนซาปาสดๆ หรือปิ้งย่างสไตล์ซาปาแก้หนาว</div>
+                    <div class="content-title">มื้อค่ำเมนูไฮไลท์ "แซลมอน & ปลาสเตอร์เจียน"</div>
+                    <div class="content-desc">ลิ้มลองหม้อไฟปลาสเตอร์เจียน และแซลมอนซาปาสดๆ หรือชุดปิ้งย่างสไตล์ซาปาแก้หนาวที่ร้าน <a href="https://maps.app.goo.gl/u931S" target="_blank" class="map-link"><i class="fa-solid fa-utensils"></i> Sang Tuyen Restaurant</a></div>
                 </div>
             </div>
+
         </div>
     </div>
 
@@ -626,41 +703,47 @@
             <a href="https://maps.app.goo.gl/491k2" target="_blank" class="map-link"><i class="fa-solid fa-tree"></i> Cat Cat Village</a>
         </div>
         <div class="day-body">
+
             <div class="timeline-item">
                 <div class="time-badge">08:30 - 09:30</div>
                 <div class="content-box">
-                    <div class="content-title">Check-out ฝากกระเป๋า & มื้อเช้า</div>
-                    <div class="content-desc">เช็คเอาท์ย้ายฝากกระเป๋าไว้ที่โรงแรมคืนที่ 2 ทานอาหารเช้าเฝอร้อนๆ</div>
+                    <div class="content-title">ย้ายกระเป๋า & มื้อเช้าท้องถิ่น</div>
+                    <div class="content-desc">เช็คเอาท์ฝากกระเป๋า ย้ายไปโรงแรมคืนที่ 2 มื้อเช้าแนะนำเฝอเนื้อร้อนๆ สไตล์เวียดนามเหนือ</div>
                 </div>
             </div>
+
             <div class="timeline-item">
                 <div class="time-badge">10:00 - 12:30</div>
                 <div class="content-box">
                     <div class="content-title">ท่องเที่ยวหมู่บ้านกั๊ตกั๊ต (Cat Cat Village)</div>
-                    <div class="content-desc">เดินชมหมู่บ้านชาวม้งดำกลางหุบเขา ถ่ายรูปกับชุดพื้นเมือง และชมน้ำตกกลางหมู่บ้าน</div>
+                    <div class="content-desc">นั่งรถลงไป 10 นาที เดินชมหมู่บ้านชาวม้งดำกลางหุบเขา เช่าชุดพื้นเมืองถ่ายรูป ชมน้ำตก ลำธาร และการทอผ้าดั้งเดิม</div>
                 </div>
             </div>
+
             <div class="timeline-item">
                 <div class="time-badge">13:00 - 15:30</div>
                 <div class="content-box">
                     <div class="content-title">มื้อกลางวัน & Cafe Hopping</div>
-                    <div class="content-desc">รับประทานอาหารกลางวัน แล้วแวะจิบชาร้อนๆ ที่ Cafe Bao Cap Sa Pa</div>
+                    <div class="content-desc">รับประทานอาหารกลางวัน แล้วแวะจิบชาร้อนๆ บรรยากาศย้อนยุคเวียดนามโบราณที่ <a href="https://maps.app.goo.gl/d391A" target="_blank" class="map-link"><i class="fa-solid fa-coffee"></i> Cafe Bao Cap Sa Pa</a></div>
                 </div>
             </div>
+
             <div class="timeline-item">
                 <div class="time-badge">16:00 - 18:30</div>
                 <div class="content-box">
-                    <div class="content-title">เช็คอินโรงแรมแห่งที่ 2 & ช็อปปิ้งตลาดซาปา</div>
-                    <div class="content-desc">เช็คอินเข้าพักโรงแรมใหม่ แล้วเดินช็อปปิ้งงานผ้าปักชาวเขาที่ Sapa Market และถนน Cau May</div>
+                    <div class="content-title">เช็คอินโรงแรมแห่งที่ 2 & เดินเล่นช็อปปิ้ง</div>
+                    <div class="content-desc">เข้าเช็คอินพักผ่อน แล้วออกช็อปปิ้งสินค้าแฮนด์เมด งานปักชาวเขาที่ตลาดซาปา (Sapa Market) และถนนคนเดิน Cau May</div>
                 </div>
             </div>
+
             <div class="timeline-item">
                 <div class="time-badge">19:00 เป็นต้นไป</div>
                 <div class="content-box">
-                    <div class="content-title">มื้อค่ำปิ้งย่างยามค่ำคืน</div>
-                    <div class="content-desc">รับประทานอาหารค่ำปิ้งย่างเสียบไม้ และเดินเล่นตลาดกลางคืนซาปา</div>
+                    <div class="content-title">มื้อค่ำสุดอบอุ่น & ตลาด night market</div>
+                    <div class="content-desc">ทานอาหารค่ำเมนูปิ้งย่างเสียบไม้สไตล์ซาปา และจิบไวน์แอปเปิ้ลแมว (Rượu Táo Mèo) ยามค่ำคืน</div>
                 </div>
             </div>
+
         </div>
     </div>
 
@@ -671,54 +754,61 @@
                 <div class="day-number">06</div>
                 <div>
                     <div class="day-date">เสาร์ 7 พฤศจิกายน 2026</div>
-                    <div class="day-subtitle">จุดชมวิว Muong Hoa Valley ➔ รถบัสตู้นอนกลับฮานอย</div>
+                    <div class="day-subtitle">เช็คอินจุดชมวิวสวยซาปา ➔ รถบัสตู้นอนกลับฮานอย</div>
                 </div>
             </div>
             <a href="https://maps.app.goo.gl/91kA2" target="_blank" class="map-link"><i class="fa-solid fa-bus"></i> Sapa Sleeper Bus Station</a>
         </div>
         <div class="day-body">
+
             <div class="timeline-item">
                 <div class="time-badge">08:30 - 10:00</div>
                 <div class="content-box">
-                    <div class="content-title">Check-out ฝากกระเป๋า & มื้อเช้า</div>
-                    <div class="content-desc">เช็คเอาท์ฝากกระเป๋าไว้ที่โรงแรม หรือออฟฟิศรถบัส แล้วทานมื้อเช้าสบายๆ</div>
+                    <div class="content-title">Check-out ฝากกระเป๋า & มื้อเช้าสุดชิลล์</div>
+                    <div class="content-desc">เช็คเอาท์ฝากกระเป๋าไว้ที่โรงแรม หรือออฟฟิศรถบัส ทานมื้อเช้าที่ <a href="https://maps.app.goo.gl/A91k3" target="_blank" class="map-link"><i class="fa-solid fa-mug-hot"></i> Le Petit Sapa Cafe</a></div>
                 </div>
             </div>
+
             <div class="timeline-item">
                 <div class="time-badge">10:00 - 12:30</div>
                 <div class="content-box">
                     <div class="content-title">Morning Attraction: หุบเขา Muong Hoa</div>
-                    <div class="content-desc">ชมวิวนาขั้นบันไดและหุบเขาที่หมู่บ้าน Lao Chai / Ta Van หรือเช็คอินที่ Secret Garden Sapa</div>
+                    <div class="content-desc">นั่งรถไปชมวิวนาขั้นบันไดและทิวเขาอลังการที่หมู่บ้าน Lao Chai / Ta Van หรือถ่ายรูปจุดชมวิวยอดฮิตที่ <a href="https://maps.app.goo.gl/k391S" target="_blank" class="map-link"><i class="fa-solid fa-camera"></i> Secret Garden Sapa</a></div>
                 </div>
             </div>
+
             <div class="timeline-item">
                 <div class="time-badge">12:30 - 14:00</div>
                 <div class="content-box">
-                    <div class="content-title">มื้อกลางวันอร่อยๆ ในซาปา</div>
-                    <div class="content-desc">รับประทานอาหารกลางวันสไตล์ฟิวชั่น หรืออาหารท้องถิ่น</div>
+                    <div class="content-title">มื้อกลางวันรสเลิศ</div>
+                    <div class="content-desc">รับประทานอาหารกลางวันสไตล์ฟิวชั่น หรืออาหารเวียดนามพื้นบ้านที่ร้าน <a href="https://maps.app.goo.gl/S921A" target="_blank" class="map-link"><i class="fa-solid fa-utensils"></i> Moment Romantic Restaurant</a></div>
                 </div>
             </div>
+
             <div class="timeline-item">
                 <div class="time-badge">14:30 - 18:00</div>
                 <div class="content-box">
                     <div class="content-title">Afternoon Relax & ซื้อของฝาก</div>
-                    <div class="content-desc">นั่งร้านกาแฟชมวิวพาโนรามาที่ Haven Sapa Camp Site และเดินเลือกซื้อชาอู่หลง ชาคาโมมายล์ท้องถิ่น</div>
+                    <div class="content-desc">นั่งร้านกาแฟชมวิวพาโนรามาที่ <a href="https://maps.app.goo.gl/j291K" target="_blank" class="map-link"><i class="fa-solid fa-coffee"></i> Haven Sapa Camp Site</a> เดินเลือกซื้อของฝากชาอู่หลงซาปา เม็ดมะม่วงหิมพานต์</div>
                 </div>
             </div>
+
             <div class="timeline-item">
                 <div class="time-badge">18:30 - 21:00</div>
                 <div class="content-box">
                     <div class="content-title">มื้อค่ำส่งท้ายซาปา</div>
-                    <div class="content-desc">ทานมื้อค่ำแบบสบายๆ ก่อนเตรียมตัวเดินทางขึ้นรถบัส</div>
+                    <div class="content-desc">ทานมื้อค่ำแบบสบายๆ ก่อนเตรียมตัวเดินทางกลับ</div>
                 </div>
             </div>
+
             <div class="timeline-item">
                 <div class="time-badge">22:00 - 04:30</div>
                 <div class="content-box">
-                    <div class="content-title">เดินทางกลับฮานอยด้วยรถบัสตู้นอน VIP</div>
-                    <div class="content-desc">ขึ้นรถบัสตู้นอน VIP (Sleeper Bus) นอนหลับสบายตลอดทางมุ่งหน้าสู่กรุงเทพฯ/ฮานอย</div>
+                    <div class="content-title">นอนยาวบนรถบัสตู้นอน VIP (Sleeper Bus to Hanoi)</div>
+                    <div class="content-desc">ขึ้นรถบัสตู้นอนVIP (เช่น Interbus Lines / Sao Viet) เดินทางกลับกรุงเทพฯ/ฮานอย นอนหลับสบายตลอดทาง 5.5 - 6 ชม.</div>
                 </div>
             </div>
+
         </div>
     </div>
 
@@ -735,30 +825,34 @@
             <a href="https://maps.app.goo.gl/u912A" target="_blank" class="map-link"><i class="fa-solid fa-plane"></i> Noi Bai International Airport</a>
         </div>
         <div class="day-body">
+
             <div class="timeline-item">
                 <div class="time-badge">05:00 - 07:00</div>
                 <div class="content-box">
                     <div class="content-title">เดินทางถึงสนามบินโหน่ยบ่าย ฮานอย (HAN)</div>
-                    <div class="content-desc">เดินทางถึงสนามบินโหน่ยบ่าย ฮานอย ล้างหน้าแปรงฟัน พักผ่อนเตรียมเช็คอิน</div>
+                    <div class="content-desc">รถบัสส่งลงที่สนามบินโหน่ยบ่าย (หรือลงในเมืองแล้วนั่ง Grab ต่อมาสนามบิน) ล้างหน้าแปรงฟัน พักผ่อน</div>
                 </div>
             </div>
+
             <div class="timeline-item">
                 <div class="time-badge">08:00 - 09:30</div>
                 <div class="content-box">
-                    <div class="content-title">มื้อเช้าเฝอโบราณ & ซื้อของฝากสนามบิน</div>
-                    <div class="content-desc">ทานมื้อเช้าเฝอเนื้อร้อนๆ และแวะซื้อของฝากดิวตี้ฟรี เช่น กาแฟดริป Trung Nguyen และเม็ดมะม่วงหิมพานต์อบเกลือ</div>
+                    <div class="content-title">มื้อเช้าเฝอโบราณ & ซื้อของฝากดิวตี้ฟรี/สนามบิน</div>
+                    <div class="content-desc">ทานมื้อเช้าเฝอเนื้อ หรือบันห์มีสนามบิน พร้อมแวะซื้อของฝากยอดฮิต: กาแฟดริปเวียดนาม (Trung Nguyen), ถั่วดิบ/เม็ดมะม่วงหิมพานต์อบเกลือ, และขนมเปี๊ยะเวียดนาม</div>
                 </div>
             </div>
+
             <div class="timeline-item">
                 <div class="time-badge">12:20 - 14:15</div>
                 <div class="content-box">
                     <div class="content-title">เหินฟ้ากลับกรุงเทพฯ (FD 641)</div>
                     <div class="flight-box">
                         <div class="flight-info"><i class="fa-solid fa-plane-arrival"></i> Thai AirAsia FD 641 (HAN 12:20 ➔ DMK 14:15)</div>
-                        <div class="content-desc" style="margin-top: 4px;">เดินทางกลับถึงสนามบินดอนเมืองโดยสวัสดิภาพและความประทับใจ!</div>
+                        <div class="content-desc" style="margin-top: 4px;">เดินทางถึงสนามบินดอนเมืองโดยสวัสดิภาพและความประทับใจ!</div>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 
